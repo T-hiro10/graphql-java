@@ -9,6 +9,10 @@ cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
+before_script:
+  - echo -n > /home/travis/stream_method_stacktrace.txt
+  - echo -n > /home/travis/result_of_timer.txt
 script:
   - ./travis-build.sh
-
+  - cat /home/travis/stream_method_stacktrace.txt
+  - cat /home/travis/result_of_timer.txt
