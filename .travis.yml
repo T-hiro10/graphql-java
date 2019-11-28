@@ -14,5 +14,6 @@ before_script:
   - echo -n > /home/travis/result_of_timer.txt
 script:
   - ./travis-build.sh
+after_failure:
   - cat /home/travis/stream_method_stacktrace.txt
   - cat /home/travis/result_of_timer.txt
