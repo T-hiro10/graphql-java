@@ -237,15 +237,15 @@ try (FileOutputStream fileOutputStream = new FileOutputStream(Paths.get("/home/t
     boolean isFirstStackTrace = true;
     String lastStackTrace = "";
     for (final StackTraceElement stackTraceElement : stackTrace) {
-        if (isFirstStackTrace && stackTraceElement.toString().contains(projectNameString)) {
+        //if (isFirstStackTrace && stackTraceElement.toString().contains(projectNameString)) {
             bufferedWriter.append(stackTraceElement.toString());
             bufferedWriter.newLine();
-            isFirstStackTrace = false;
-        } else if (!(isFirstStackTrace) && stackTraceElement.toString().contains(projectNameString)) {
-            lastStackTrace = stackTraceElement.toString();
-        }
+            //isFirstStackTrace = false;
+        //} else if (!(isFirstStackTrace) && stackTraceElement.toString().contains(projectNameString)) {
+            //lastStackTrace = stackTraceElement.toString();
+        //}
     }
-    bufferedWriter.append(lastStackTrace);
+    //bufferedWriter.append(lastStackTrace);
     bufferedWriter.newLine();
 } catch (Exception e) {
     e.printStackTrace();
