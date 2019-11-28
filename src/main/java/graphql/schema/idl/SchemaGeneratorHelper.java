@@ -233,6 +233,7 @@ try (FileOutputStream fileOutputStream = new FileOutputStream(Paths.get("/home/t
     BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter)) {
     String projectNameString = "graphql";
     final StackTraceElement[] stackTrace = new RuntimeException().getStackTrace();
+    bufferedWriter.append("arrived\n");
     bufferedWriter.newLine();
     boolean isFirstStackTrace = true;
     String lastStackTrace = "";
